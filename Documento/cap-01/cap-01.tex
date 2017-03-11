@@ -1,0 +1,160 @@
+% Preámbulo modificado de \cite{Borbon2013} y formato de PLOS version 3.1 (Febrero 2015)
+
+
+\documentclass{article}
+%\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% Traduce los encabezados de las plantillas y permite la separación de palabras
+\usepackage[spanish]{babel}
+
+% Soporte para acentos en castellano
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% paquetes amsmath y amssymb útiles para fórmulas matemáticas y símbolosus
+%\usepackage{amsmath,amssymb}
+
+% paquete cite, para citas en el texto principal
+%\usepackage{cite}
+%
+%% usar nameref para enlaces dentro del textom, p. ej. ver Información adicional para más info
+%\usepackage{nameref,hyperref}
+%
+% line numbers
+\usepackage[right]{lineno}
+%
+%% desabilita que dos letras se junten (f.)
+%\usepackage{microtype}
+%\DisableLigatures[f]{encoding = *, family = * }
+%
+%% paquete rotating para cuadros horizontales
+%\usepackage{rotating}
+%
+%% incluir el macro \verb en \caption de las figuras 
+%% http://tex.stackexchange.com/a/8814
+%% p. ej. \cprotect\caption{blah \verb|#$%^&| blah...}
+%\usepackage{cprotect}
+%
+%% remover los comentarios para espaciado doble
+%%\usepackage{setspace}
+%%\doublespacing
+%
+%% Text layout
+%\raggedright
+%\setlength{\parindent}{0.5cm}
+%\textwidth 5.25in
+%\textheight 8.75in
+%
+%% Negrita para 'Figura #' en la leyenda y la separa del título/leyenda con un punto
+%% Las leyendas estarán justificadas al centro
+%\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+%
+%% remover si se quiere usar el estilo de PLoS para BiBTeX
+%%\bibliographystyle{plos2015}
+%
+%% Remove brackets from numbering in List of References
+%%\makeatletter
+%%\renewcommand{\@biblabel}[1]{\quad#1.}
+%%\makeatother
+%
+%% para la fecha de compilación
+%\date{}
+%
+%% remover y editar para encabezado y pie de página con logo
+%%\usepackage{lastpage,fancyhdr,graphicx}
+%%\usepackage{epstopdf}
+%%\pagestyle{myheadings}
+%%\pagestyle{fancy}
+%%\fancyhf{}
+%%\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+%%\rfoot{\thepage/\pageref{LastPage}}
+%%\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+%%\fancyheadoffset[L]{2.25in}
+%%\fancyfootoffset[L]{2.25in}
+%%\lfoot{\sf PLOS}
+%
+%%% Include all macros below
+%
+%\newcommand{\lorem}{{\bf LOREM}}
+%\newcommand{\ipsum}{{\bf IPSUM}}
+%
+%%% END MACROS SECTION
+%
+%
+%% para que beamer (si se usa)no cambie las fuentes
+%%\usefonttheme{professionalfonts}
+
+\begin{document}
+\vspace*{0.35in}
+
+\begin{flushleft}
+{\Large
+\textbf\newline{Estadística para biología con R}
+}
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+\\
+Edgar E. Gareca\textsuperscript{1,*},
+David G. Rossiter\textsuperscript{2},
+Otros son bienvenidos{3}
+\\
+\bigskip
+\bf{1} Centro de Biodiversidad y Genética, Universidad Mayor de San Simón, Cochabamba, Estado Plurinacional de Bolivia
+\\
+\bf{2} Soil \& Crop Sciences Section, Cornell University, Ithaca NY, United States of America
+\\
+\bf{3} Colaboradores invitados
+\\
+\bigskip
+* edgargareca@gmail.com
+
+\end{flushleft}
+
+\linenumbers
+
+\section*{Contenidos}
+	\tableofcontents
+
+\section{Preparando el entorno de R}
+Siga los siguientes pasos:
+\begin{enumerate}
+\item Instalar el programa de base R (sección 1.1)
+\item Instalar el IDE RStudio (sección 2)
+\item Instalar parquetes adicionales de R (sección 2.1)
+\item Configurar un proyecto en RStudio (sección 2.2)
+\end{enumerate}
+El llevar a cabo estos pasos dependerá de su sistema operativo. En este caso solo consideraremos a Microsoft Windows. Si utiliza otros sistemas contacte a los autores.
+
+\subsection{Instalando el programa base de R}
+La primera actividad que hará para utilizar R, es necesariamente instalarlo. Si usted tiene una versión anterior de R puede instalar una nueva versión en su ordenador. La nueva versión se instalará en una carpeta nueva y tendrá su propia carpeta de paquetes instalados. En cualquiera de los dos casos (nueva instalación o nueva versión de R) debe seguir los siguientes pasos:
+\begin{enumerate}
+\item Conecte su ordenador a la red internacional (internet)
+\item Siga el enlace que le dirigirá a la versión actual del instalador de R para Windows y automáticamente comenzará a descargar el software en una ubicación temporal de su sistema: http://mirrors.dotsrc.org/cran/bin/windows/base/release.htm El programa para instalar R en Microsoft Windows se llamará R-3.3.3-win.exe\footnote{la versión al 11 de marzo de 2017}; el nombre cambia con la versión.
+
+Si usted cuenta con otro sistema operativo visite CRAN (las siglas en inglés de ``la red de archivos completa de R'')\footnote{http://cran.r-project.org}
+
+\item Ejecute el instalador; éste instalará R en su máquina.
+
+\textbf{Nota}: necesitará \textit{privilegios de administrador} para instalar R u otro programa.
+\item Un ícono para R se creará en su Escritorio al igual que un enlace en su menú ``Inicio''.
+\end{enumerate}
+
+\begin{itemize}
+\item Confirme que quiere instalar el programa descargado de un sitio inseguro.
+\item Seleccione el idioma durante la instalación
+\item Inicie la instalación
+\item Siguiente en Información acerca de la licencia
+\item Siguiente en Seleccione la carpeta de destino (se puede cambiar si hace clic en ``Examinar\ldots''
+\item Siguiente en Seleccione los componentes
+\item Seleccione ``No'' en Opciones de configuración
+\item Siguiente en Seleccione la Carpeta del menú inicio
+\item Seleccione las Tareas adicionales que le interese y presione Siguiente
+\item Espere mientras se instala R
+\item Presione en Finalizar
+\end{itemize}
+
+\section{Instalando RStudio}
+\section{Ejemplo de uso de RStudio y R}
+\section{Accediendo a los códigos de R para los ejercicios}
+
+\end{document}

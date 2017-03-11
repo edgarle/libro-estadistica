@@ -1,0 +1,59 @@
+﻿Reglas de \cite{Noble2009}
+<<Alguien que desconozca tu proyecto debería ser capaz de ver los archivos de tu ordenador y entender en detalle lo que hiciste y por qué.>>
+Ley de Murphy: <<Todo lo que hagas, probablemente lo volverás a hacer.>>
+
+\textbf{Organización de los archivos y directorios}
+
+
+Proyecto --> Lógica --> Cronología --> Lógica
+
+libro-estadistica
+ |
+ - - doc
+ |  |
+ |  - prefacio
+ |  - contenido
+ |  - cap-01
+ |  - cap-02
+ |  - ...
+ |  - referencias
+ |  - indice
+ |
+ |- - datos (archivos fijos = no Git, enlazados a fuente)
+ |  |
+ |  -2017-03-10-CedarCreek
+ |- - codigo (código fuente)
+ |- - codEG  (código Edgar = Git)
+ |
+ |- - result (resultados de análisis a fólder "datos" = Git)
+    |
+    -Notas
+    -2017-03-10-ANOVA
+
+NOTAS importantes (*.Rnw):
+*.Rnw generalmente es un documento de LaTex con código de R en él
+<<>>=	inicia grupos de código
+@	termina grupos de código
+\Sexpr{} inserta código de R en el texto
+<<opciones>>=:
+	fig.width=4
+	fig.height=3
+	fig.align='center'
+library(knitr)
+	knit("your-file.Rnw") weaving: compila el documento o reporte
+	purl("your-file.Rnw") tangling: extrae el código de R del archivo = Rscript
+	
+
+En R usar:
+*print(sessionInfo(), locale = FALSE) y adjuntarla
+*incluir INSTRUCCIONES para compilar el documento (shale script, makefile, batch file)
+*utilizar direcciones/enlaces relativas:
+`..data/figuras/' si está un directorio arriba
+`./figuras/' si está en el mismo directorio que el código
+*compilar los docs en una sesión de R limpia. Los objetos existentes pueden modificar los resultados
+*escriba los nombres de los archivos que está llamando
+
+EN R NO usar:
+*setwd(`dirección/de/alguna/carpeta)
+*comandos que abrán cuadros de diálogo (p. ej. file.choose)
+

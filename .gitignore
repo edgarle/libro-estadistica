@@ -1,0 +1,12 @@
+data/
+*~
+*.bbl
+*.blg
+*.dvi
+*.out
+*.sty
+*.aux
+*.log
+*.zip
+*.bak
+*.sav
