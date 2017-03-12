@@ -1,0 +1,305 @@
+% Preámbulo modificado de \cite{Borbon2013} y formato de PLOS
+% version 3.1 (Febrero 2015)
+% con comandos del 2014 sin referencia, probablemente asociado con el formato de Tufte book
+
+
+\documentclass{book}
+% \documentclass{refre} %Genera error con esta opción
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% Traduce los encabezados de las plantillas y permite la separación de palabras
+\usepackage[spanish]{babel}
+
+% Soporte para acentos en castellano
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% paquetes amsmath y amssymb útiles para fórmulas matemáticas y símbolosus
+\usepackage{amsmath,amssymb}
+
+% paquete cite para citas numeradas en el texto principal
+%\usepackage{cite}
+% paquete natbib para citas por autor y año, y numeradas
+\usepackage[authoryear]{natbib}
+
+% usar nameref para enlaces dentro del texto, p. ej. ver Información adicional para más info
+\usepackage{nameref}
+
+% usar paquete xcolr para utilizar nombres de colores
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% usar paquete hyperref para utilizar hipereferencias
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=OliveGreen]{hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% desabilita que dos letras se junten (f.)
+% genera ERROR
+%\usepackage{microtype}
+%\DisableLigatures[f]{encoding = *, family = * }
+
+%paquete rotating para cuadros horizontales
+\usepackage{rotating}
+
+% Para material en tablas bonito
+% revisar uso
+\usepackage{booktabs}
+
+% incluir el macro \verb en \caption de las figuras 
+% http://tex.stackexchange.com/a/8814
+% p. ej. \cprotect\caption{blah \verb|#$%^&| blah...}
+\usepackage{cprotect}
+
+% remover los comentarios para espaciado doble
+%\usepackage{setspace}
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in
+\textheight 8.75in
+
+% Negrita para 'Figura #' en la leyenda y la separa del título/leyenda con un punto
+% Las leyendas estarán justificadas al centro
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+
+% remover si se quiere usar el estilo de PLoS para BiBTeX
+%\bibliographystyle{plos2015}
+
+% Quita corchetes de la lista enumerada de referencias (si se usa estilo PLOS)
+%\makeatletter
+%\renewcommand{\@biblabel}[1]{\quad#1.}
+%\makeatother
+
+% remover y editar para encabezado y pie de página con logo
+%\usepackage{lastpage,fancyhdr,graphicx}
+%\usepackage{epstopdf}
+%\pagestyle{myheadings}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+%\rfoot{\thepage/\pageref{LastPage}}
+%\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+%\fancyheadoffset[L]{2.25in}
+%\fancyfootoffset[L]{2.25in}
+%\lfoot{\sf PLOS}
+
+% para que beamer (si se usa)no cambie las fuentes
+% genera ERROR. Usar solo con beamer
+%\usefonttheme{professionalfonts}
+
+% para gráficos/figuras
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{../../Figuras/}}
+
+% el paquete fancyvrb permite personalizar el formato de verbatim
+% se usa una fuente un poco más pequeña
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% imprime en paréntesis que no ocupan espacio horizontal (hanging parentheses
+% útil para ambientes con cuadros
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
+
+% imprime un asterisco que no ocupa espacio horizontal
+% útil en ambientes con cuadros
+\newcommand{\hangstar}{\makebox[0pt][l]{*}}
+
+% imprime los espacios de una manera intelingente
+% revisar
+\usepackage{xspace}
+
+%%%%%%%%%%%%%%
+% Paquetes usados en Reproducible Research Book
+% revisar uso
+%\usepackage{subfigure}
+%\usepackage{makeidx}
+%\usepackage{emptypage}
+%\usepackage{showidx}
+%\usepackage{multicol}
+%    \frenchspacing
+%    \tolerance=5000
+%\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+%\usepackage{dcolumn}
+%\usepackage{booktabs}
+%\usepackage{multirow}
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+%\usepackage{lscape}
+%\usepackage{todonotes}
+%\usepackage{tikz}
+%    \usetikzlibrary{trees}
+%    \usetikzlibrary{decorations.pathmorphing}
+%    \usetikzlibrary{shapes,arrows}
+%\usepackage{alltt}
+%%%%%%%%%%%
+
+% genera el índice
+% REVISAR uso
+%\usepackage{makeidx}
+%\makeindex
+
+% paquete showkeys para mostrar las etiquetas de enlaces
+% util en el proceso de revisión
+%\usepackage{showkeys}
+
+% para definir los márgenes de las cajas con código de salida resaltado
+%\setlength\fboxsep{6.25mm}
+
+\newcommand{\blankpage}
+    {\newpage\hbox{\textit{\Large Página dejada en blanco intencionalmente}}
+    \thispagestyle{empty}\newpage}
+
+% define las opciones generales de knitr
+<<OpcionesGlobales, echo=FALSE>>=
+opts_chunk$set(concordance=TRUE,
+               fig.align='center',
+               echo=TRUE,
+               background='#FFFFFF'
+               )
+@
+
+\begin{document}
+\vspace*{0.35in}
+\title{Bioestadística básica con R}
+
+% para la fecha de compilación
+\date{Compilado el \today}
+
+% El frente importa
+\frontmatter
+
+% r.1 página en blanco
+\blankpage
+
+% r.3 página del título
+\maketitle
+\author{Edgar\ E.\ Gareca Le\'on \and David\ G.\ Rossiter}
+
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+
+% define numeración romana de las páginas al inicio del libro
+\pagenumbering{roman}
+
+% r.5 contenidos
+\tableofcontents
+
+% Añadir lista de figuras
+%\phantomsection \label{listadefig}
+%\addcontentsline{toc}{chapter}{Lista de Figuras}
+%\listoffigures
+
+% Añadir lista de cuadros
+%\phantomsection \label{listadecuad}
+%\addcontentsline{toc}{chapter}{Lista de Cuadros}
+%\listoftables
+
+% incluye archivo al prefacio
+\input{./ArchivosTex/0-Frente/Prefacio.Rnw}
+\input{./ArchivosTex/0-Frente/Paquetes.Rnw}
+
+Aprendí que puedo utilizar referencias cruzadas. Para ello puedo utilizar:
+\begin{verbatim}
+\label{myID}
+\ref{myID} coloca el # de sección, subsección, fig, tabla, después
+           del que se usó el comando \label
+\pageref{myID} imprime el # de página donde está myID
+\end{verbatim}
+También puedo utilizar pies de página\footnote{Siempre deben estar detrás de la palabra, o coma o punto al que hacen referencia} con la opción
+\begin{verbatim}
+\footnote{texto}
+\end{verbatim}
+
+
+
+%%%%%%%%%%%%
+% inicia el cuerpo (capítulos normales
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% siguiendo un ejemplo anterior del 5 de julio de 2016
+% REVISAR lo que sirve
+% Parte 1, incluir documentos hijo
+%\part{Iniciándose con R}
+%
+%<<Hijo1, echo=FALSE, child=c('Hijos/Capitulo1/capitulo1.Rnw', 'Hijos/Capitulo2/capitulo2.Rnw', 'Hijos/Capitulo3/capitulo3.Rnw'), eval=TRUE, message=FALSE>>=
+%@
+%
+%% Parte 2, incluir documentos hijo
+%%\part{Análisis exploratorio de datos}
+%
+%<<Hijo2, echo=FALSE, child=c('Hijos/Capitulo4/capitulo4.Rnw'), eval=TRUE, message=FALSE>>=
+%@
+%
+%% Parte 3, incluir documentos hijo
+%%\part{Estadística paramétrica y no paramétrica}
+%
+%<<Hijo3, echo=FALSE, child=c('Hijos/Capitulo5/capitulo5.Rnw', 'Hijos/Capitulo6/capitulo6.Rnw', 'Hijos/Capitulo7/capitulo7.Rnw'), eval=TRUE, message=FALSE>>=
+%@
+%
+%% Parte 4, incluir documentos hijo
+%%\part{Exportación de datos y figuras}
+%
+%<<Hijo4, echo=FALSE, child=c('Hijos/Capitulo8/capitulo8.Rnw'), eval=TRUE, message=FALSE>>=
+%@
+%
+%% Incluir la bibliografía
+%% \cite{bibtexkey}   --> Donohue et al. (2009)
+%% \citep{bibtexkey}  --> (Donohue et al., 2009)
+%% \citeauthor{bibtexkey}   --> Donohue et al.
+%% \citeyear{bibtexkey}     --> 2009
+%% \citeyearpar{bibtexkey}  --> (2009)
+%% \cite[10]{bibtexkey}     --> (Donohue et al., 2009, 10)
+%% \cite[ver][10]{bibtexkey}--> (ver Donohue et al., 2009, 10)
+%
+%%\cleardoublepage
+%%\addcontentsline{toc}{chapter}{\bibname}
+%\bibliographystyle{apa}
+%%\markboth{\bibname}{\bibname}
+%\bibliography{BiostatR,Hijos/Frente/BiostatR-PaquetesCitados}% NO colocar espacios entre archivos, ni la extensión .bib
+%
+%
+%% Incluir índice
+%%\let\myindtmp\indexspace % para comprimir el espacio del índice
+%%\renewcommand{\indexspace}{\myindtmp\vspace*{-2pt}}
+%
+%%\cleardoublepage
+%%\markboth{\indexname}{\indexname}
+%%\printindex
+%
+%\end{document}
+%
+%% #### Cargar y citar packages de R ####
+%
+%% # Crear la lista de paquetes
+%% PaquetesUsados <- c("knitr")
+%
+%% # Cargar paquetes usados
+%% lapply(PaquetesUsados, library, character.only = TRUE) # crea una biblioteca con nombres de paquetes
+%
+%% # Crear el archivo con los paquetes usados
+%% knitr::write_bib(PaquetesUsados, file = "Paquetes.bib")# OJO: write_bib reemplaza al archivo
+%%%%%%%%%%%%%%%%
+
+
+\mainmatter
+
+% Iniciar el conteo de las páginas con números arábigos desde el 1
+\setcounter{page}{1}
+
+%\include
+
+% crea capítulo e incluye archivo
+\chapter{Preparando el entorno de R}
+\input{./ArchivosTex/cap-01/cap-01.Rnw}
+% termina el cuerpo del libro
+%%%%%%%%%%%%
+
+\backmatter
+\bibliography{LibroCompilado}
+\bibliographystyle{plain}
+
+
+\end{document}

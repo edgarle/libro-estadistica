@@ -1,12 +1,22 @@
-Documento/
 *~
+
+# Ignora los productos de latex #
+#################################
+*.aux
 *.bbl
 *.blg
+cache/*
+figure/*
+*.log
+*.pdf
+*.gz
+*.tex
 *.dvi
 *.out
 *.sty
-*.aux
-*.log
 *.zip
-*.bak
+
+# Ignora los archivos secundarios de bib #
+##########################################
 *.sav
+*.bak
