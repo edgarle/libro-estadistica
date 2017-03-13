@@ -1,4 +1,5 @@
-﻿Reglas de \cite{Noble2009}
+﻿%%%%%%%%%%%%%
+Reglas de \cite{Noble2009}
 <<Alguien que desconozca tu proyecto debería ser capaz de ver los archivos de tu ordenador y entender en detalle lo que hiciste y por qué.>>
 Ley de Murphy: <<Todo lo que hagas, probablemente lo volverás a hacer.>>
 
@@ -30,20 +31,26 @@ libro-estadistica
     -Notas
     -2017-03-10-ANOVA
 
+%%%%%%%%%%%%%%
 NOTAS importantes (*.Rnw):
 *.Rnw generalmente es un documento de LaTex con código de R en él
 <<>>=	inicia grupos de código
 @	termina grupos de código
 \Sexpr{} inserta código de R en el texto
+<<NombreDelGrupo>>= NO usar puntos
+
 <<opciones>>=:
-	fig.width=4
-	fig.height=3
+	fig.width=4,
+	fig.height=3,
 	fig.align='center'
-library(knitr)
+	echo=FALSE ejecuta el código pero no lo muestra en el documento
+	cache=TRUE guarda los resultados del código en la memoria
+*library(knitr)
 	knit("your-file.Rnw") weaving: compila el documento o reporte
 	purl("your-file.Rnw") tangling: extrae el código de R del archivo = Rscript
 	
 
+%%%%%%%%%%%%%
 En R usar:
 *print(sessionInfo(), locale = FALSE) y adjuntarla
 *incluir INSTRUCCIONES para compilar el documento (shale script, makefile, batch file)
@@ -53,7 +60,107 @@ En R usar:
 *compilar los docs en una sesión de R limpia. Los objetos existentes pueden modificar los resultados
 *escriba los nombres de los archivos que está llamando
 
+**************
+* Para descargar datos del internet a R usar:
+*# Se coloca la dirección en un objeto llamado UrlAddress:
+*UrlAddress <- paste0("https://raw.github.com/christophergandrud/",
+*"Disproportionality_Data/master/",
+*"Disproportionality.csv")
+*
+*
+*# Se descargan los datos al objeto DispopData
+*DispropData <- repmis::source_data(UrlAddress)
+*
+*## SHA-1 hash of file is 195637339e8483dd634fae38e16ad8f24a403aef
+*
+*# Se muestran los nombres de las variables
+*names(DispropData)
+*
+*## [1] "country" "year" "disproportionality"
+***************
+*se puede definir el commit deseado en R colocando su número como un fólder ANTES del nombre del archivo
+*
+* Data/24132054j1093541/archivo.csv
+***************
+
+* Para obtener los mismos números aleatorios definir la misma "semilla" (>=5 dígitos) JUSTO antes de utilizar las funciones de números aleatorios
+set.seed(12555)
+
+*Para guardar resultados 
+
+%%%%%%%%%%%%%
 EN R NO usar:
 *setwd(`dirección/de/alguna/carpeta)
 *comandos que abrán cuadros de diálogo (p. ej. file.choose)
 
+%%%%%%%%%%%%%
+En LaTex usar:
+
+*Aprendí que puedo utilizar referencias cruzadas. Para ello puedo utilizar:
+\begin{verbatim}
+\label{myID}
+\ref{myID} coloca el # de sección, subsección, fig, tabla, después
+           del que se usó el comando \label
+\pageref{myID} imprime el # de página donde está myID
+\end{verbatim}
+
+*También puedo utilizar pies de página\footnote{Siempre deben estar detrás de la palabra, o coma o punto al que hacen referencia} con la opción
+\begin{verbatim}
+\footnote{texto}
+\end{verbatim}
+
+*toLatex(sessionInfo()) Incluye la información de la sesión en LaTex
+
+****************
+* Para incluir un análisis de R en el documento (ReproducribleResearchWithR and Rstudio (p.154):
+*<<r, include=FALSE}
+*# Ejecutar el análisis principal
+*source("/Proyecto/Analisis/AnalisisPrincipal.R")
+*
+***************
+* Es importante que estos códigos estén ANTES de los sitios donde se usen sus resultados
+***************
+
+
+%%%%%%%%%%%%%
+En Git usar:
+
+* git pull ANTES de push tus commits para evitar problemas con colaboradores
+
+*How do I remove a folder from my git repository without deleting it from my local machine (i.e., development environment)?
+http://stackoverflow.com/questions/24290358/remove-a-folder-from-git-tracking
+
+Answer
+Step 1. Add the folder path to your repo's root .gitignore file.
+
+path_to_your_folder/
+
+Step 2. Remove the folder from your local git tracking, but keep it on your disk.
+
+git rm -r --cached path_to_your_folder/
+
+Step 3. Push your changes to your git repo.
+
+The folder will be considered "deleted" from Git's point of view (i.e. they are in past history, but not in the latest commit, and people pulling from this repo will get the files removed from their trees), but stay on your working directory because you've used --cached.
+
+%%%%%%%%%%%%%
+En Git Bash usar:
+
+* /Usuarios/Documents Fólder Usuarios en la ráiz 
+* Usuarios/Documents  Fólder Ususarios dentro del directorio actual
+* cd - Cambia el directorio a uno superior
+* pwd Presenta el directorio de trabajo actual
+* mkdir /NuevoDirectorio Crea un nuevo directorio o la siguietnte opción
+* sudo mkdir /NuevoDirectorio Solicita clave de adminsitrador
+
+* echo "texto" > Ejemplo.txt Añade la palabra texto al documento. Reemplaza el resto
+* echo texto >> Ejemplo.txt Añade la palabra texto al final del documento
+* mv /Proy1/Ejemplo.txt /LaTexFiles Mueve el archivo a la segunda carpeta
+* cp /Proy1/Ejemplo.txt /LaTexFiles Copia el archivo a la segunda carpeta
+* git add . Incluye todos los archivos del directorio para seguimiento
+* git status -s Imprime el estado de git resumido (abreviaciones)
+* git branch Muestra la rama en que nos encontramos
+* git branch Nueva Crea la la rama Nueva
+* git granch -d Nueva Borra la rama Nueva
+* git checkout Nueva Hace que uno se mueva a la rama Nueva
+* git merge Nueva Junta rama Nueva con la máster si está en ella
