@@ -24,8 +24,9 @@ figure/*
 *.bak
 
 ########## Ignora los cambios de proyecto de R ##########
+*.Rproj
 .Rproj.user
-
+.Rhistory
 
 cache-*
 figs/
