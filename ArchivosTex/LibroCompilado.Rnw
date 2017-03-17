@@ -1,0 +1,255 @@
+%%%%%%%%%%%%%%
+% Documento creado por Edgar E. Gareca
+% Fecha de creación: 10 de marzo de 2017
+% Ultima modificacion: 12 de marzo de 2017
+% Preámbulo modificado de \cite{Borbon2013} y formato de PLOS
+% version 3.1 (Febrero 2015)
+% con comandos del 2014 sin referencia, probablemente asociado con el formato de Tufte book
+%%%%%%%%%%%%%%
+
+
+%%%%%%%%%% Preámbulo %%%%%%%%%%
+\documentclass{refrep}
+\settextfraction{.8} %es el margen de página de Rossiter
+%\setromanfont[Ligatures=TeX]{TeX Gyre Pagella}
+%\setsansfont[Ligatures=TeX,Scale=MatchLowercase]{TeX Gyre Heros}
+%\setmonofont[Scale=MatchLowercase]{Inconsolata}
+
+%para cambiar los márgenes de las hojas
+%\usepackage[top=2cm,left=3.5cm]{geometry}
+
+% Traduce los encabezados de las plantillas y permite la separación de palabras
+\usepackage[spanish]{babel}
+
+% Soporte para acentos en castellano
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% paquetes amsmath y amssymb útiles para fórmulas matemáticas y símbolosus
+\usepackage{amsmath,amssymb}
+
+% paquete natbib para citas por autor y año en formato APA
+\usepackage[authoryear]{natbib}
+\bibliographystyle{apa}
+
+% usar nameref para enlaces dentro del texto, p. ej. ver Información adicional para más info
+\usepackage{nameref}
+
+% usar paquete xcolr para utilizar nombres de colores
+\usepackage[dvipsnames]{xcolor}
+
+% usar paquete hyperref para utilizar hipereferencias
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=BrickRed]{hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% desabilita que dos letras se junten (f.)
+% genera ERROR
+%\usepackage{microtype}
+%\DisableLigatures[f]{encoding = *, family = * }
+
+%paquete rotating para cuadros horizontales
+\usepackage{rotating}
+
+% Para material en tablas bonito
+% REVISAR uso
+\usepackage{booktabs}
+
+% incluir el macro \verb en \caption de las figuras 
+% http://tex.stackexchange.com/a/8814
+% p. ej. \cprotect\caption{blah \verb|#$%^&| blah...}
+\usepackage{cprotect}
+
+% remover los comentarios para espaciado doble
+%\usepackage{setspace}
+%\doublespacing
+
+% Negrita para 'Figura #' en la leyenda y la separa del título/leyenda con un punto
+% Las leyendas estarán justificadas al centro
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+
+
+% remover y editar para encabezado y pie de página con logo
+%\usepackage{lastpage,fancyhdr,graphicx}
+%\usepackage{epstopdf}
+%\pagestyle{myheadings}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+%\rfoot{\thepage/\pageref{LastPage}}
+%\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+%\fancyheadoffset[L]{2.25in}
+%\fancyfootoffset[L]{2.25in}
+%\lfoot{\sf PLOS}
+
+% para que beamer (si se usa)no cambie las fuentes
+% genera ERROR. Usar solo con beamer
+%\usefonttheme{professionalfonts}
+
+% para gráficos/figuras
+%\usepackage{graphicx}
+%\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+%\graphicspath{{../Figuras/}}
+
+% el paquete fancyvrb permite personalizar el formato de verbatim
+% se usa una fuente un poco más pequeña
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% imprime en paréntesis que no ocupan espacio horizontal (hanging parentheses
+% útil para ambientes con cuadros
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
+
+% imprime un asterisco que no ocupa espacio horizontal
+% útil en ambientes con cuadros
+\newcommand{\hangstar}{\makebox[0pt][l]{*}}
+
+% imprime los espacios de una manera intelingente
+% revisar
+\usepackage{xspace}
+
+% REVISAR uso
+\usepackage{wrapfig}
+
+%%%%%%%%%%%%%%
+% Paquetes usados en Reproducible Research Book
+% revisar uso
+%\usepackage{subfigure}
+%\usepackage{makeidx}
+%\usepackage{emptypage}
+%\usepackage{showidx}
+%\usepackage{multicol}
+%    \frenchspacing
+%    \tolerance=5000
+%\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+%\usepackage{dcolumn}
+%\usepackage{booktabs}
+%\usepackage{multirow}
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+%\usepackage{lscape}
+%\usepackage{todonotes}
+%\usepackage{tikz}
+%    \usetikzlibrary{trees}
+%    \usetikzlibrary{decorations.pathmorphing}
+%    \usetikzlibrary{shapes,arrows}
+%\usepackage{alltt}
+%%%%%%%%%%%
+
+% genera el índice
+% REVISAR uso
+\usepackage{makeidx}
+\makeindex
+
+% paquete showkeys para mostrar las etiquetas de enlaces
+% util en el proceso de revisión
+% QUITAR en documento final
+\usepackage{showkeys}
+
+% para definir los márgenes de las cajas con código de salida resaltado
+%\setlength\fboxsep{6.25mm}
+
+\newcommand{\blankpage}
+    {\newpage\hbox{\textit{\Large Página dejada en blanco intencionalmente}}
+    \thispagestyle{empty}\newpage}
+
+% define las opciones generales de knitr
+
+%Título y autores
+\title{Bioestadística básica con R}
+\author{E\ E\ Gareca \and D\ G\ Rossiter}
+
+% para la fecha de compilación
+\date{Compilado el \today}
+
+%%%%%%%%%% Inicio del documento %%%%%%%%%%
+\begin{document}
+
+% crea la página del título
+\maketitle
+
+
+% página en blanco
+\blankpage
+
+% introduce números de línea
+\linenumbers
+
+% contenidos
+\tableofcontents
+
+<<OpcionesGlobales, echo=FALSE>>=
+opts_chunk$set(
+  concordance=TRUE,
+  fig.align='center',
+  echo=TRUE,
+  background='#FFFFFF',#quita fondo de código de R
+  cache=TRUE,#guarda caché
+  cache.path='cache-libro/'#guarda caché en fólder (SDL-paquetes.bib)
+  )
+@
+
+% incluye archivo al prefacio
+<<Prefacio, child=c('0-Frente/Prefacio.Rnw'), eval=TRUE, message=FALSE>>=
+@
+
+%%%%%%%%%% inicia el cuerpo (capítulos normales) %%%%%%%%%%
+
+% Iniciar el conteo de las páginas con números arábigos desde el 1
+\setcounter{page}{1} %no funciona. REVISAR.
+
+% Parte 1, incluir documentos hijo %
+\part{Iniciándose con R}
+<<Parte1, echo=FALSE, child=c('cap-01/cap-01.Rnw', 'cap-02/cap-02.Rnw', 'cap-03/cap-03.Rnw'), eval=TRUE, message=FALSE>>=
+@
+
+% Parte 2, incluir documentos hijo %
+\part{Análisis exploratorio de datos}
+<<Parte2, echo=FALSE, child=c('cap-04/cap-04.Rnw'), eval=TRUE, message=FALSE>>=
+@
+
+% Parte 3, incluir documentos hijo %
+\part{Estadística paramétrica y no paramétrica}
+<<Parte3, echo=FALSE, child=c('cap-05/cap-05.Rnw', 'cap-06/cap-06.Rnw', 'cap-07/cap-07.Rnw'), eval=TRUE, message=FALSE>>=
+@
+
+% Parte 4, incluir documentos hijo %
+\part{Exportación de datos y figuras}
+<<Parte4, echo=FALSE, child=c('cap-08/cap-08.Rnw'), eval=TRUE, message=FALSE>>=
+@
+
+
+
+%%%%%%%%%% Bibliografía %%%%%%%%%%
+
+%% para incluir la bibliografía en el texto
+%% \cite{bibtexkey}   --> Donohue et al. (2009)
+%% \citep{bibtexkey}  --> (Donohue et al., 2009)
+%% \citeauthor{bibtexkey}   --> Donohue et al.
+%% \citeyear{bibtexkey}     --> 2009
+%% \citeyearpar{bibtexkey}  --> (2009)
+%% \cite[10]{bibtexkey}     --> (Donohue et al., 2009, 10)
+%% \cite[ver][10]{bibtexkey}--> (ver Donohue et al., 2009, 10)
+
+%Añade la Bibliografía como un capítulo al índice de contenidos
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\bibname}
+
+%Archivos de Bibliografía (*.bib)
+\bibliography{Bibliografia,SDL-paquetes}
+% NO colocar espacios entre archivos, ni la extensión .bib
+% No colocar bases de datos que no se usen.
+% SOlución: generar un archivo .bib Importando los Paquetes-0#.bib en Bibliografia.bib en JabRef.
+
+%%%%%%%%% Indice de términos %%%%%%%%%
+
+%% Incluir índice
+%\let\myindtmp\indexspace % para comprimir el espacio del índice
+%\renewcommand{\indexspace}{\myindtmp\vspace*{-2pt}}
+
+\cleardoublepage
+\markboth{\indexname}{\indexname}
+\printindex
+
+\end{document}

@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%
+% Capítulo Capítulo 1 para Bioestadística utilizando el software libre R
+% Edgar Gareca 
+% Creado: 06/07/2016 12:29 am La Paz
+% Actualizado: 12 Marzo 2017
+%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% Definiendo el padre %%%%%%%%%
+<<Padre01, include=FALSE>>=
+set_parent('../LibroCompilado.Rnw')
+@
+
+
+%%%%%%%%% Nombre del capítulo %%%%
+\chapter{Introducción a R}%\label{Intro}
+
+Borrar \cite{R-ggplot2,R-knitr}
+\section{¿Qué es R?}
+R es un ambiente de acceso libre para cálculos estadísticos y visualizaciones. Se basa en el lenguaje S desarrollado por los Laboratorios Bell en la década de los 1980's \citep{Ihaka1996}, y es el producto de un movimiento activo entre estadísticos para tener un ambiente computacional potente, programable, portable y abierto, aplicable a los problemas más complejos y sofisticados, así como a análisis de ``rutina'', sin restricciones en su acceso o uso. A continuación se presenta una descripción de la página de inicio del Proyecto R (R Project):\footnote{http://www.r-project.org/}
+
+\begin{quote}
+``R es un conjunto integrado de ¿facilidades? de software para la manipulación, cálculo de datos y la creación de gráficos. Incluye:
+   \begin{itemize}
+      \item Una facilidad efectiva de manejo y almacenamiento de datos,
+      \item Un juego de operadores para cálculos de matrices,
+      \item Una colección grande, coherente, integrada de herramientas intermedias para el análisis de datos,
+      \item Facilidades gráficas para el análisis de datos y su representación en la pantalla o en papel, y
+      \item un lenguaje de programación bien desarrollado, simple y efectivo que incluye condicionales, círculos, funciones recursivas definidas por el usuario y facilidades para ingresar datos y para obtener los resultados.''
+   \end{itemize}
+\end{quote}      
+
+El último punto resultó de una característica importante:
+
+\begin{itemize}
+\item Los especialistas en estadística han implementado cientos de procedimientos estadísticos especializados para una gran variedad de aplicaciones como paquetes, que también son de distribución gratuita y que se integran directamente en R. Algunos de estos paquetes se presentan en esto documento.
+\end{itemize}
+
+\section{Ventajas de R}
+R tiene muchas ventajas importantes, entre ellas se destacan:
+\begin{itemize}
+   \item Es completamente gratis y siempre lo será;
+   \item está disponible gratis en el internet, a través de una gran cantidad de redes de servidores en diferentes partes del mundo;
+   \item se puede ejecutar en varios sistemas operativos: Unix, Mac OS X, Linux, Microsoft Windows, Apple Macintosh OS y otros.
+   \item Es el producto de la colaboración internacional entre especialistas en estadística de alto nivel y diseñadores de lenguajes de ordenador;
+   \item permite realizar análisis estadísticos y su visualización con una sofisticación ilimitada;
+   \item el usuario no está limitado a un grupo pequeño de procedimientos u opciones, y debido a la gran cantidad de paquetes, el usuario no está limitado a un método para lograr un cálculo dado o una presentación gráfica;
+   \item se puede trabajar con objetos de tamaño y complejidad ilimitados con un lenguaje consistente  y lógico
+   \item se apoya en una documentación técnica amplia y con tutoriales orientados al usuario.
+   \item Todos los pasos ejecutados se guardan, y esta historia puede guardarse para uso posterior o para documentar su trabajo.
+   \item Estimula el pensamiento crítico al resolver un problema, pues se evita la mentalidad ``aprete este botón''.
+   \item Es totalmente programable, con su propio lenguaje sofisticado de ordenador
+   \item Los procedimietos repetitivos pueden ser automatizados con el uso de ``scripts'' preparados por el usuario.
+   \item Es fácil escribir funciones del usuario, e incluso paquetes si se inventa algún análisis nuevo
+   \item Todo el código fuente está publicado, así que se pueden ver exactamente cuáles son los algoritmos utilizados; asimismo, los especialistas en estadística pueden revisarlo
+   \item Se puede intercambiar datos con MS-Excel, texto, formatos fijos y delimitados (p. ej. CSV: en inglés valores separados por coma), tanto para la importación como para la exportación
+\end{itemize}
+
+%%%%%%%%%% Creando paquetes usados %%%%%%%%%%
+%incluye los paquetes en el archivo SDL-paquetes.bib
+<<genera-bib01, include=FALSE, bib=file.info('../cache-libro/__packages')[,'size']>>=
+write_bib(c(readLines('../cache-libro/__packages'), 'ggplot2'),
+file='../SDL-paquetes.bib')
+@

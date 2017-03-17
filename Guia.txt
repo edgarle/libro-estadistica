@@ -125,6 +125,7 @@ En LaTex usar:
 %%%%%%%%%%%%%
 En Git usar:
 
+* git clone https://github.com/...
 * git pull ANTES de push tus commits para evitar problemas con colaboradores
 
 *How do I remove a folder from my git repository without deleting it from my local machine (i.e., development environment)?

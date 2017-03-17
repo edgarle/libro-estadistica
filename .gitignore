@@ -1,22 +1,33 @@
 *~
 
-# Ignora los productos de latex #
-#################################
+########## Ignora los productos de latex ##########
 *.aux
 *.bbl
 *.blg
 cache/*
+*.dvi
 figure/*
+*.idx
+*.ilg
+*.ind
 *.log
 *.pdf
 *.gz
 *.tex
-*.dvi
+*.toc
 *.out
 *.sty
 *.zip
 
-# Ignora los archivos secundarios de bib #
-##########################################
+########## Ignora los archivos secundarios de bib #########
 *.sav
 *.bak
+
+########## Ignora los cambios de proyecto de R ##########
+.Rproj.user
+
+
+cache-*
+figs/
+knitr-book.*
+*-tikzDictionary
