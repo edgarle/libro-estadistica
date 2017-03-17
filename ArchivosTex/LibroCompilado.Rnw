@@ -23,7 +23,17 @@
 
 % Soporte para acentos en castellano
 \usepackage[utf8]{inputenc}
+
+% Palatino para rm and math | Helvetica para ss | Bera mono para tt
+\usepackage{mathpazo} % math & rm
+\linespread{1.05}        % Palatino needs more leading (space between lines)
+\usepackage[scaled]{helvet} % ss
+\usepackage[scaled]{beramono} % tt
+\normalfont
 \usepackage[T1]{fontenc}
+
+%permite cambiar el tamaño de las letras fuera del rango normal
+\usepackage{anyfontsize}
 
 % paquetes amsmath y amssymb útiles para fórmulas matemáticas y símbolosus
 \usepackage{amsmath,amssymb}
@@ -158,13 +168,22 @@
 
 %Título y autores
 \title{Bioestadística básica con R}
-\author{E\ E\ Gareca \and D\ G\ Rossiter}
+\author{E\ E\ Gareca 
+\\ Centro de Biodiversidad y Genética
+\\Universidad Mayor de San Simón
+\and D\ G\ Rossiter
+\\ Departamento
+\\ Institución
+}
 
 % para la fecha de compilación
 \date{Compilado el \today}
 
 %%%%%%%%%% Inicio del documento %%%%%%%%%%
 \begin{document}
+
+% cambia el tamaño de letras. Depende del paquete anyfontsize
+\fontsize{11}{13}\selectfont
 
 % crea la página del título
 \maketitle

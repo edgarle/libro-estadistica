@@ -28,7 +28,12 @@ El llevar a cabo estos pasos dependerá de su sistema operativo. En este caso so
 La primera actividad que hará para utilizar R, es necesariamente instalarlo. Si usted tiene una versión anterior de R puede instalar una nueva versión en su ordenador. La nueva versión se instalará en una carpeta nueva y tendrá su propia carpeta de paquetes instalados. En cualquiera de los dos casos (nueva instalación o nueva versión de R) debe seguir los siguientes pasos:
 \begin{enumerate}
 \item Conecte su ordenador a la red internacional (internet)
-\item Siga el enlace que le dirigirá a la versión actual del instalador de R para Windows y automáticamente comenzará a descargar el software en una ubicación temporal de su sistema: \url{http://mirrors.dotsrc.org/cran/bin/windows/base/release.htm} El programa para instalar R en Microsoft Windows se llamará R-3.3.3-win.exe\footnote{la versión al 11 de marzo de 2017}; el nombre cambia con la versión.
+\item Siga el enlace que le dirigirá a la versión actual del instalador de R para Windows y automáticamente comenzará a descargar el software en una ubicación temporal de su sistema:
+\nopagebreak
+\begin{maxipage}
+\centering{\normalsize \url{http://mirrors.dotsrc.org/cran/bin/windows/base/release.htm}}
+\end{maxipage}\nopagebreak
+El programa para instalar R en Microsoft Windows se llamará R-3.3.3-win.exe\footnote{la versión al 11 de marzo de 2017}; el nombre cambia con la versión.
 
 Si usted cuenta con otro sistema operativo visite CRAN (las siglas en inglés de ``la red de archivos completa de R'')\footnote{http://cran.r-project.org}
 

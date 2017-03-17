@@ -14,7 +14,7 @@ set_parent('../LibroCompilado.Rnw')
 \chapter{Nombre del capítulo 4}%\label{Intro}
 
 \section{Sección 1 capítulo 4}
-Incluir texto
+Incluir texto prueba
 
 %%%%%%%%%% Creando paquetes usados %%%%%%%%%%
 %incluye los paquetes en el archivo SDL-paquetes.bib

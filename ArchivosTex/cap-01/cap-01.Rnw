@@ -16,7 +16,7 @@ set_parent('../LibroCompilado.Rnw')
 
 Borrar \cite{R-ggplot2,R-knitr}
 \section{¿Qué es R?}
-R es un ambiente de acceso libre para cálculos estadísticos y visualizaciones. Se basa en el lenguaje S desarrollado por los Laboratorios Bell en la década de los 1980's \citep{Ihaka1996}, y es el producto de un movimiento activo entre estadísticos para tener un ambiente computacional potente, programable, portable y abierto, aplicable a los problemas más complejos y sofisticados, así como a análisis de ``rutina'', sin restricciones en su acceso o uso. A continuación se presenta una descripción de la página de inicio del Proyecto R (R Project):\footnote{http://www.r-project.org/}
+R es un ambiente de acceso libre para cálculos estadísticos y visualizaciones. Se basa en el lenguaje S desarrollado por los Laboratorios Bell en la década de los 1980's \citep{Ihaka1996}, y es el producto de un movimiento activo entre estadísticos para tener un ambiente computacional potente, programable, portable y abierto, aplicable a los problemas más complejos y sofisticados, así como a análisis de ``rutina'', sin restricciones en su acceso o uso. A continuación se presenta una descripción de la página de inicio del Proyecto R (R Project):\footnote{\url{http://www.r-project.org/}}
 
 \begin{quote}
 ``R es un conjunto integrado de ¿facilidades? de software para la manipulación, cálculo de datos y la creación de gráficos. Incluye:
