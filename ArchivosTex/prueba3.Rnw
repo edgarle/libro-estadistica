@@ -1,0 +1,38 @@
+<<PadrePru, include=FALSE>>=
+set_parent('LibroCompilado.Rnw')
+@
+
+
+<<setup, include=FALSE, cache=FALSE>>=
+opts_chunk$set(fig.path='figura/prueba-', fig.align='center', fig.show='hold',fig.width=6, fig.height=6, out.width='.75\\linewidth')
+@
+
+\chapter{Prueba}%\label{Intro}
+
+Este documento utiliza el juego de datos \texttt{trees} que viene con R para ilustrar un análisis de datos simple.
+\begin{enumerate}
+\item describe las variables y los casos;
+\item investiga la inter-relación entre variables; y
+\item modela el volumen de los árboles como una función de la altura y/o diámetro.
+\end{enumerate}
+
+Primero, cargue el juego de datos, examine su estructura, y resuma las variables: \par
+<<>>=
+data(trees)
+str(trees)
+summary(trees)
+@
+
+Posteriormente presentamos una figura del juego de datos:
+<<>>=
+pairs(trees,pch=20, cex=1.2)
+@
+
+Parece existir una relación positiva entre el diámetro y el volumen, que parece un poco no lineal (cuadrática). La relación entre altura y volum  en también es positiva pero más débil. La altura y el diámetro están poco relacionadas, lo que sugiere que los árboles tienen diferentes morfologías.
+
+<<>>=
+m <- lm(Volume ~ Girth * Height, data=trees)
+summary(m)
+@
+
+El éxito es muy bueno, como se mide por el \( R^2\) ajustado (\Sexpr{round(summary(m)$adj.r.squared*100,1)}\%) y el número pi (\Sexpr{pi}).

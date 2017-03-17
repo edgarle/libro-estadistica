@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%
+% Capítulo 6 para Bioestadística con R
+% Edgar Gareca 
+% Creado: 15/03/2017 22:28 pm Cochabamba
+% Actualizado:
+%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% Definiendo el padre %%%%%%%%%
+<<Padre06, include=FALSE>>=
+set_parent('../LibroCompilado.Rnw')
+@
+
+
+%%%%%%%%% Nombre del capítulo %%%%
+\chapter{Nombre del capítulo 6}%\label{Intro}
+
+\section{Sección 1 capítulo 6}
+Incluir texto
+
+%%%%%%%%%% Creando paquetes usados %%%%%%%%%%
+%incluye los paquetes en el archivo SDL-paquetes.bib
+<<genera-bib06, include=FALSE, bib=file.info('../cache-libro/__packages')[,'size']>>=
+write_bib(c(readLines('../cache-libro/__packages'), 'knitr'),
+file='../SDL-paquetes.bib')
+@
