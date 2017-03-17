@@ -11,22 +11,10 @@ set_parent('../LibroCompilado.Rnw')
 
 \chapter*{Prefacio}
 
-\section{¿Qué es R?}
-R es un ambiente de acceso libre para cálculos estadísticos y visualizaciones. Se basa en el lenguaje S desarrollado por los Laboratorios Bell en la década de los 1980's \citep{Ihaka1996}, y es el producto de un movimiento activo entre estadísticos para tener un ambiente computacional potente, programable, portable y abierto, aplicable a los problemas más complejos y sofisticados, así como a análisis de ``rutina'', sin restricciones en su acceso o uso. A continuación se presenta una descripción de la página de inicio del Proyecto R (R Project)\footnote{\url{http://www.r-project.org/}}:
-\cite{R-knitr}
+La utilidad de un libro de acceso libre en nuestro idioma acerca del uso de R para análisis estadísticos es indiscutible. 
 
 %%%%%%%%%% Creando paquetes usados %%%%%%%%%%
 %incluye los paquetes en el archivo *.bib
-
-% opción 1 NO funciona
-%<<Paquetes-P,include=FALSE>>=
-%# lista de paquetes
-%PaquetesP <- c("knitr")
-%# cargar paquetes
-%lapply(PaquetesP, library, character.only = TRUE)
-%# crea el archivo BibTex con referencias
-%knitr::write_bib(PaquetesP, file = "../Paquetes-P.bib")#OJO: write_bib reemplaza el archivo
-%@
 
 %opción 2 prueba
 <<genera-bibP, include=FALSE, bib=file.info('../cache-libro/__packages')[,'size']>>=

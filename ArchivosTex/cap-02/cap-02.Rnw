@@ -12,35 +12,35 @@ set_parent('../LibroCompilado.Rnw')
 
 
 %%%%%%%%% Nombre del capítulo %%%%
-\chapter{Nombre del capítulo 2}%\label{Intro}
-Una cita para probar \citep{Ihaka1996}.
+\chapter{Usando R}
+
 \section{Preparando el entorno de R}
 Siga los siguientes pasos:
-\begin{enumerate}
-\item Instalar el programa de base R (sección 1.1)
-\item Instalar el IDE RStudio (sección 2)
-\item Instalar parquetes adicionales de R (sección 2.1)
-\item Configurar un proyecto en RStudio (sección 2.2)
-\end{enumerate}
+  \begin{enumerate}
+  \item Instalar el programa de base R (sección 1.1)
+  \item Instalar el IDE RStudio (sección 2)
+  \item Instalar parquetes adicionales de R (sección 2.1)
+  \item Configurar un proyecto en RStudio (sección 2.2)
+  \end{enumerate}
 El llevar a cabo estos pasos dependerá de su sistema operativo. En este caso solo consideraremos a Microsoft Windows\index{Windows}. Si utiliza otros sistemas contacte a los autores.
 
 \subsection{Instalando el programa base de R}
 La primera actividad que hará para utilizar R, es necesariamente instalarlo. Si usted tiene una versión anterior de R puede instalar una nueva versión en su ordenador. La nueva versión se instalará en una carpeta nueva y tendrá su propia carpeta de paquetes instalados. En cualquiera de los dos casos (nueva instalación o nueva versión de R) debe seguir los siguientes pasos:
 \begin{enumerate}
-\item Conecte su ordenador a la red internacional (internet)
-\item Siga el enlace que le dirigirá a la versión actual del instalador de R para Windows y automáticamente comenzará a descargar el software en una ubicación temporal de su sistema:
-\nopagebreak
-\begin{maxipage}
-\centering{\normalsize \url{http://mirrors.dotsrc.org/cran/bin/windows/base/release.htm}}
-\end{maxipage}\nopagebreak
-El programa para instalar R en Microsoft Windows se llamará R-3.3.3-win.exe\footnote{la versión al 11 de marzo de 2017}; el nombre cambia con la versión.
-
-Si usted cuenta con otro sistema operativo visite CRAN (las siglas en inglés de ``la red de archivos completa de R'')\footnote{http://cran.r-project.org}
-
-\item Ejecute el instalador; éste instalará R en su máquina.
-
-\textbf{Nota}: necesitará \textit{privilegios de administrador} para instalar R u otro programa.
-\item Un ícono para R se creará en su Escritorio al igual que un enlace en su menú ``Inicio''.
+  \item Conecte su ordenador a la red internacional (internet)
+  \item Siga el enlace que le dirigirá a la versión actual del instalador de R para Windows y automáticamente comenzará a descargar el software en una ubicación temporal de su sistema:
+  \nopagebreak
+  \begin{maxipage}
+  \centering{\normalsize \url{http://mirrors.dotsrc.org/cran/bin/windows/base/release.htm}}
+  \end{maxipage}\nopagebreak
+  El programa para instalar R en Microsoft Windows se llamará R-3.3.3-win.exe\footnote{la versión al 11 de marzo de 2017}; el nombre cambia con la versión.
+  
+  Si usted cuenta con otro sistema operativo visite CRAN (las siglas en inglés de ``la red de archivos completa de R'')\footnote{http://cran.r-project.org}
+  
+  \item Ejecute el instalador; éste instalará R en su máquina.
+  
+  \textbf{Nota}: necesitará \textit{privilegios de administrador} para instalar R u otro programa.
+  \item Un ícono para R se creará en su Escritorio al igual que un enlace en su menú ``Inicio''.
 \end{enumerate}
 
 \begin{itemize}

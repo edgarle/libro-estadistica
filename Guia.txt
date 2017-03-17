@@ -159,14 +159,19 @@ En Git Bash usar:
 
 * echo "texto" > Ejemplo.txt Añade la palabra texto al documento. Reemplaza el resto
 * echo texto >> Ejemplo.txt Añade la palabra texto al final del documento
+
 * mv /Proy1/Ejemplo.txt /LaTexFiles Mueve el archivo a la segunda carpeta
 * cp /Proy1/Ejemplo.txt /LaTexFiles Copia el archivo a la segunda carpeta
+
 * git add . Incluye todos los archivos del directorio para seguimiento
 * git commit -a -m "Este comando confirma todos los cambios"
+
 * git status -s Imprime el estado de git resumido (abreviaciones)
+
 * git branch Muestra la rama en que nos encontramos
 * git branch Nueva Crea la la rama Nueva
-* git granch -d Nueva Borra la rama Nueva
+* git branch -d Nueva Borra la rama Nueva
+
 * git checkout Nueva Hace que uno se mueva a la rama Nueva
 * git checkout -b Nueva Crea nueva rama y se cambia a la misma
 

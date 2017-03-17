@@ -14,50 +14,67 @@ set_parent('../LibroCompilado.Rnw')
 %%%%%%%%% Nombre del capítulo %%%%
 \chapter{Introducción a R}%\label{Intro}
 
-Borrar \cite{R-ggplot2,R-knitr}
 \section{¿Qué es R?}
-R es un ambiente de acceso libre para cálculos estadísticos y visualizaciones. Se basa en el lenguaje S desarrollado por los Laboratorios Bell en la década de los 1980's \citep{Ihaka1996}, y es el producto de un movimiento activo entre estadísticos para tener un ambiente computacional potente, programable, portable y abierto, aplicable a los problemas más complejos y sofisticados, así como a análisis de ``rutina'', sin restricciones en su acceso o uso. A continuación se presenta una descripción de la página de inicio del Proyecto R (R Project):\footnote{\url{http://www.r-project.org/}}
+R es un ambiente de acceso libre para cálculos estadísticos y visualizaciones. Se basa en el lenguaje S desarrollado por los Laboratorios Bell en la década de los años 80 \citep{Ihaka1996}, y es el producto de un movimiento activo entre estadísticos para lograr un ambiente computacional potente, programable, portátil y abierto, aplicable a los problemas más complejos y sofisticados, así como a análisis de ``rutina''; todo esto sin restricciones en su acceso o uso para los usuarios. A continuación se presenta una traducción de la descripción de la página de inicio del Proyecto R (R Project):\footnote{\url{http://www.r-project.org/}}
 
 \begin{quote}
-``R es un conjunto integrado de ¿facilidades? de software para la manipulación, cálculo de datos y la creación de gráficos. Incluye:
+``R es un conjunto integrado de aplicaciones de software para la manipulación, cálculo de datos y la creación de gráficos. Incluye:
    \begin{itemize}
       \item Una facilidad efectiva de manejo y almacenamiento de datos,
-      \item Un juego de operadores para cálculos de matrices,
-      \item Una colección grande, coherente, integrada de herramientas intermedias para el análisis de datos,
-      \item Facilidades gráficas para el análisis de datos y su representación en la pantalla o en papel, y
-      \item un lenguaje de programación bien desarrollado, simple y efectivo que incluye condicionales, círculos, funciones recursivas definidas por el usuario y facilidades para ingresar datos y para obtener los resultados.''
+      \item Un grupo de operadores para cálculos de matrices,
+      \item Una colección grande, coherente e integrada de herramientas intermedias para el análisis de datos,
+      \item Facilidades gráficas para el análisis de datos y su representación, tanto en la pantalla como en papel, y
+      \item Un lenguaje de programación bien desarrollado, simple y efectivo que incluye condicionales, círculos, funciones recursivas definidas por el usuario y facilidades para ingresar datos y para obtener los resultados.''
    \end{itemize}
 \end{quote}      
 
-El último punto resultó de una característica importante:
+El último punto tiene como resultado una característica muy importante:
 
 \begin{itemize}
-\item Los especialistas en estadística han implementado cientos de procedimientos estadísticos especializados para una gran variedad de aplicaciones como paquetes, que también son de distribución gratuita y que se integran directamente en R. Algunos de estos paquetes se presentan en esto documento.
+\item Los especialistas en estadística han implementado cientos de procedimientos estadísticos especializados para una gran variedad de aplicaciones como paquetes, que también son de distribución gratuita y que se integran directamente en R. El uso de algunos de estos paquetes se presenta en esto documento.
 \end{itemize}
 
 \section{Ventajas de R}
-R tiene muchas ventajas importantes, entre ellas se destacan:
+R tiene muchas ventajas importantes, con seguridad algunas de ellas son importantes para usted:
 \begin{itemize}
-   \item Es completamente gratis y siempre lo será;
-   \item está disponible gratis en el internet, a través de una gran cantidad de redes de servidores en diferentes partes del mundo;
-   \item se puede ejecutar en varios sistemas operativos: Unix, Mac OS X, Linux, Microsoft Windows, Apple Macintosh OS y otros.
-   \item Es el producto de la colaboración internacional entre especialistas en estadística de alto nivel y diseñadores de lenguajes de ordenador;
-   \item permite realizar análisis estadísticos y su visualización con una sofisticación ilimitada;
-   \item el usuario no está limitado a un grupo pequeño de procedimientos u opciones, y debido a la gran cantidad de paquetes, el usuario no está limitado a un método para lograr un cálculo dado o una presentación gráfica;
-   \item se puede trabajar con objetos de tamaño y complejidad ilimitados con un lenguaje consistente  y lógico
-   \item se apoya en una documentación técnica amplia y con tutoriales orientados al usuario.
-   \item Todos los pasos ejecutados se guardan, y esta historia puede guardarse para uso posterior o para documentar su trabajo.
-   \item Estimula el pensamiento crítico al resolver un problema, pues se evita la mentalidad ``aprete este botón''.
-   \item Es totalmente programable, con su propio lenguaje sofisticado de ordenador
-   \item Los procedimietos repetitivos pueden ser automatizados con el uso de ``scripts'' preparados por el usuario.
-   \item Es fácil escribir funciones del usuario, e incluso paquetes si se inventa algún análisis nuevo
+   \item Es completamente gratis y siempre lo será por el tipo de licencia; lo que no requiere el uso de software estadístico especializado pero pirata. Está disponible gratis en el internet, a través de una gran cantidad de redes de servidores en diferentes partes del mundo.
+   \item Se puede ejecutar en varios sistemas operativos: Unix, Mac OS X, Linux, Microsoft Windows, Apple Macintosh OS y otros.
+   \item Es el producto de la colaboración internacional entre especialistas en estadística de alto nivel y diseñadores de lenguajes de ordenador.
+   \item Permite realizar análisis estadísticos y su visualización con una sofisticación ilimitada; el usuario no está limitado a un grupo pequeño de procedimientos u opciones. De hecho debido a la gran cantidad de paquetes, el usuario no está sujeto a un solo método para lograr un cálculo dado o una presentación gráfica; se puede trabajar con objetos de tamaño y complejidad ilimitados con un lenguaje consistente y lógico.
+   \item Se apoya en una documentación técnica amplia y con tutoriales orientados al usuario.
+   \item Estimula el pensamiento crítico al resolver un problema, pues se evita la mentalidad ``aprete este botón''. Todos los pasos ejecutados se guardan, y esta historia puede guardarse para uso posterior o para documentar su trabajo.
+   \item Es totalmente programable, con su propio lenguaje sofisticado de ordenador. Los procedimietos repetitivos pueden ser automatizados con el uso de \textbf{scripts} preparados por el usuario. Es fácil escribir funciones del usuario, e incluso paquetes si se inventa algún análisis nuevo
    \item Todo el código fuente está publicado, así que se pueden ver exactamente cuáles son los algoritmos utilizados; asimismo, los especialistas en estadística pueden revisarlo
    \item Se puede intercambiar datos con MS-Excel, texto, formatos fijos y delimitados (p. ej. CSV: en inglés valores separados por coma), tanto para la importación como para la exportación
 \end{itemize}
 
+\section{Desventajes de R}
+Como es de esperarse ya que pocas cosas en este mundo solo tienen ventajas, a continuación se incluyen algunas desventajas (aunque ``cada desventaja tiene una ventaja'':
+\begin{enumerate}
+\item La interfaz gráfica para el usuario (GUI, por sus siglas en inglés) de Windows y Mac OS X [sección] está limitada a una interacción simple con el sistema que no incluye los procedimientos estadísticos. El usuario debe \textbf{introducir comandos} para introducir los datos, hacer análisis y graficar las figuras. Sin embargo, su ventaja es que el usuario tiene un control completo sobre el sistema. Existen varios ambientes gráficos para R, uno de ellos es RStudio [sección].
+\item El usuario debe decidir la \textbf{secuencia del análisis} y ejecutarla \textbf{paso a paso}. La ventaja es que se pueden crear archivos con códigos (guiones o \textbf{scripts}) para estos análisis y ejecutar los mismos desde la línea de comando o menús. Estos guiones pueden prepararse en editores de código que están dentro de la GUI de R o en Tinn-R\footnote{\url{https://sourceforge.net/projects/tinn-r/}} o R-Studio\footnote{\url{https://www.rstudio.com/}}. La ventaja principal de este procedimiento es que se pueden revisar los resultados intermedios y los giones o scripts pueden editarse y ejecutarse nuevamente sin mucho trabajo.
+\item El usuario debe aprender a pensar en los datos en términos de \textbf{cuadros de datos} (data frames) [sección] y \textbf{objetos}, cada uno con su \textbf{clase}, que a su vez solo permite un grupo de \textbf{métodos} [sección]. La ventaja de los lenguajes de programación orientada a objetos, como es R, es que solo se puede operar en un objeto de acuerdo a los métodos que tienen sentido\footnote{Por ejemplo, solo se podrá usar la función transponer \texttt{t(objeto)} a matrices.} y los métodos que se adaptan al tipo de objeto\footnote{Por ejemplo, los métodos \texttt{summary} y \texttt{plot} dan resultados diferentes que dependen de la clase del objeto.}.
+\item El usuario debe aprender el \textbf{lenguaje S} [sección], tanto para los comandos como para la notación utilizada al momento de especificar los \textbf{modelos estadísticos} [sección]. La ventaja es que el lenguaje estadístico S provee una forma compacta de expresar los modelos que es internacional.
+\item El usuario de lengua española debe familiarizarse con términos en inglés dado que los nombres de comandos y funciones están en ese idioma y es mucho más fácil entenderlos que memorizarlos. La ventaja es que de esta manera se mejora el nivel de inglés, que actualmente es el idioma ``oficial'' de la ciencia y en el que se publican los últimos descubrimientos científicos. 
+\end{enumerate}
+
+\section{Alternativas}
+Existen muchas maneras de realizar cálculos estadísticos hoy en día. Esta sección discutirá algunos de ellos en relación a R. Sin embargo, ninguno de ellos es o tiene sus códigos de acceso libre, lo que significa que uno debe confiar en la compañía que los programó.
+
+\subsection{Paquetes estadísticos}
+Existen muchos paquetes estadísticos\footnote{Para una lista puede visitar \url{http://www.stata.com/links/statistical-software-providers/}} que incluyen MINITAB, SPSS, Statistica, Systat, GenStat y otros que son atractivos si ya está familiarizado con ellos o si los requiere en su fuente de trabajo. Aunque algunos son programables en diferentes grados, no se espera que los especialistas desarrollen nuevos algoritmos\footnote{Conjunto ordenado y finito de operaciones que permite hallar la solución de un problema (recuperado de \url{http://dle.rae.es/?id=1nmLTsh} el 17 de marzo de 2017).}. Estos deben ser comprados de distribuidores y se debe estar de acuerdo con sus licencias. Presentan los análisis más comunes en menús ya programados que pueden ser convenientes, pero a la vez es muy tentador utilizarlos sin entender completamente qué elecciones está haciendo el software para usted.
+
+SAS, por otro lado es un software muy utilizado en las industrias y universidades. Este es completamente programable, al igual que R, con su propio lenguaje de programación que tiene un origen en los primeros ordenadores IBM.
+
+\subsection{Programas estadísticos para casos especiales}
+Algunos programas son útiles para resolver temas específicos de la estadística, p. ej. análisis geoestadístico e interpolación (SURFER, GEO-EAS, ARC-GIS), análisis ecológicos (FRAG-STATS) y ordenación (CANOCO). Los algoritmos en estos programas fueron o pueden programarse como un paquete en R; por ejemplo el programa \texttt{gstat} para análisis estadístico\footnote{\url{http://www.gstat.org}} \cite{Pebesma2004}, que ahora está disponible dentro de R \cite{Graeler2016}, y el paquete \texttt{vegan} para aplicar estadística en ecología de comunidades\footnote{\url{https://cran.r-project.org/package=vegan}}.
+
+\subsection{Hojas de cálculo}
+Microsoft Excel es muy útil para la manipulación de los datos. También puede calcular algunos estadísticos (promedios, varianzas, \ldots) directamente en las hojas de cálculo. Existe también un \textit{add-on} o complemento para algunos procedimientos estadísticos. Sin embargo, tome en cuenta que Excel no fue diseñado por estadístios. Los gráficos por defecto de Excel son fáciles de producir y se pueden personalizar a través de cuadros de diálogo, pero su diseño fue muy criticado\footnote{Ejemplo \url{http://scienceblogs.com/principles/2009/03/18/why-does-excel-suck-so-much/}}. Sus ajustes por mínimos cuadrados en los gráficos de dispersión no presentan otros diagnósticos requeridos para evaluar los supuestos del análisis, por lo que no es una herramienta seria de modelación.
+
 %%%%%%%%%% Creando paquetes usados %%%%%%%%%%
 %incluye los paquetes en el archivo SDL-paquetes.bib
 <<genera-bib01, include=FALSE, bib=file.info('../cache-libro/__packages')[,'size']>>=
-write_bib(c(readLines('../cache-libro/__packages'), 'ggplot2'),
+write_bib(c(readLines('../cache-libro/__packages')),
 file='../SDL-paquetes.bib')
 @
