@@ -248,7 +248,11 @@ opts_chunk$set(
 %\let\myindtmp\indexspace % para comprimir el espacio del índice
 %\renewcommand{\indexspace}{\myindtmp\vspace*{-2pt}}
 
+% incluye el índice en el índice de contenidos
 \cleardoublepage
+\addcontentsline{toc}{chapter}{\indexname}
+
+%imprime el índice
 \markboth{\indexname}{\indexname}
 \printindex
 

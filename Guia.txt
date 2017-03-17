@@ -125,7 +125,10 @@ En LaTex usar:
 %%%%%%%%%%%%%
 En Git usar:
 
+* mkdir carpeta
+
 * git clone https://github.com/...
+
 * git pull ANTES de push tus commits para evitar problemas con colaboradores
 
 *How do I remove a folder from my git repository without deleting it from my local machine (i.e., development environment)?
@@ -159,9 +162,16 @@ En Git Bash usar:
 * mv /Proy1/Ejemplo.txt /LaTexFiles Mueve el archivo a la segunda carpeta
 * cp /Proy1/Ejemplo.txt /LaTexFiles Copia el archivo a la segunda carpeta
 * git add . Incluye todos los archivos del directorio para seguimiento
+* git commit -a -m "Este comando confirma todos los cambios"
 * git status -s Imprime el estado de git resumido (abreviaciones)
 * git branch Muestra la rama en que nos encontramos
 * git branch Nueva Crea la la rama Nueva
 * git granch -d Nueva Borra la rama Nueva
 * git checkout Nueva Hace que uno se mueva a la rama Nueva
+* git checkout -b Nueva Crea nueva rama y se cambia a la misma
+
+* git remote add origin https://github.com/usernamte/thesis.git Enlaza el repositorio local (yo) al remoto (internet). origin es el enlace que se usará como abreviación del repositorio remoto.
+* git push origin master
+* 
+
 * git merge Nueva Junta rama Nueva con la máster si está en ella
